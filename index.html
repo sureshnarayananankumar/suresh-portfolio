@@ -859,6 +859,26 @@ input[type=range]{width:100%;accent-color:var(--acc);margin-top:6px}
     <div class="builds">
       <div class="panel glow bd feat rv">
         <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="tp"><span>PERSONAL · AGENTIC AI · LIVE DEMO</span><span>open source</span></div>
+          <h4 style="font-size:28px">AI-Powered Data Engineering Copilot <span class="new">NEW</span></h4>
+          <p>Ask in plain English and a LangGraph router hands the question to the right specialist agent: <b style="color:var(--text)">SQL, Docs (RAG), dbt, Data quality or Airflow pipeline</b>. Every SQL statement passes a parser-based guard before it can run, answers cite their sources, and anything that could change data needs a human click.</p>
+          <div class="flow"><span>Question</span><b>→</b><span class="ai">LangGraph router</span><b>→</b><span class="ai">Specialist agent</span><b>→</b><span class="ai">SQL guard</span><b>→</b><span>Human approval</span></div>
+          <div class="chips"><b class="chip">Angular 19</b><b class="chip">FastAPI</b><b class="chip">LangGraph</b><b class="chip">OpenAI</b><b class="chip">sqlglot</b><b class="chip">Snowflake</b><b class="chip">dbt</b><b class="chip">Airflow</b><b class="chip">Docker</b></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px"><a class="btn sm pri" href="https://sureshnarayananankumar.github.io/ai-powered-data-engineering-copilot/" target="_blank" rel="noopener">▶ Live demo ↗</a><a class="btn sm" href="https://github.com/sureshnarayananankumar/ai-powered-data-engineering-copilot" target="_blank" rel="noopener">View code ↗</a><button class="btn sm" id="askDECopilot">Ask copilot about it</button></div>
+        </div>
+        <ul>
+          <li><b style="color:var(--text)">5 specialist agents:</b> SQL, Docs (RAG), dbt, Data quality and Airflow pipeline, routed by LangGraph</li>
+          <li><b style="color:var(--text)">SQL guard:</b> sqlglot parse tree blocks DML/DDL and multi-statements, rejects unknown tables and non-allowlisted schemas, and enforces a row limit</li>
+          <li><b style="color:var(--text)">Human in the loop:</b> queries run only when you press Run; Airflow retry/clear is locked behind approval</li>
+          <li><b style="color:var(--text)">dbt lineage:</b> materialization, upstream/downstream models and tests from manifest.json</li>
+          <li><b style="color:var(--text)">Incident triage:</b> Airflow log → DAG and task, error evidence and likely cause, labelled confirmed or unknown</li>
+          <li><b style="color:var(--text)">Angular front end:</b> agent trace, typing replies, syntax-highlighted SQL, live guardrail checklist, chart/table toggle, dark/light themes</li>
+          <li><b style="color:var(--text)">Live demo:</b> runs fully in the browser on synthetic data through an Angular HTTP interceptor, auto-deployed to GitHub Pages</li>
+          <li><b style="color:var(--text)">Tested:</b> 33 pytest + 8 Angular tests, GitHub Actions CI</li>
+        </ul>
+      </div>
+      <div class="panel glow bd feat rv">
+        <div style="display:flex;flex-direction:column;gap:12px">
           <div class="tp"><span>PERSONAL · GENAI · RAG + AGENT</span><span>open source</span></div>
           <h4 style="font-size:28px">DataOps AI Assistant <span class="new">NEW</span></h4>
           <p>Upload technical docs (dbt, Snowflake, SQL, pipeline runbooks) and ask questions. A LangGraph agent retrieves passages with RAG, checks its own answer against the sources, cites exactly which documents it used, and says <b style="color:var(--text)">"I don't know"</b> instead of guessing.</p>
@@ -1045,6 +1065,7 @@ const KB=[
  {id:'P6',src:'Profile · challenges',t:'Key AI challenges I solved: hallucinations (guardrails + RAGAS/LLM-as-judge evaluation), weak retrieval on exact terms (hybrid search + reranker + better chunking), LLM cost (context trimming, prompt compaction), model choice (open-source vs Bedrock per task on accuracy, latency, cost) and debugging multi-step agents (LangSmith/Langfuse tracing).',k:'challenge challenges problem problems difficult hard faced issues solved learn lessons hallucination debugging'},
  {id:'N1',src:'NSS · platform',t:'NSS (National Subsidy System) for the Government of Oman: subsidy application modules in React.js with reusable components and Redux, Node.js/Express microservices on MongoDB, JWT security, LLM API integration and Chart.js/ApexCharts dashboards.',k:'nss subsidy national react redux mongodb mongoose node express microservices charts dashboard'},
  {id:'X2',src:'DataOps AI Assistant',t:'DataOps AI Assistant (personal, open source): upload dbt, Snowflake, SQL and pipeline-runbook docs (PDF, TXT, Markdown, SQL) and ask questions. Ingestion: text extraction → chunking → embeddings → ChromaDB. A LangGraph agent (query understanding → retrieval → generation → LLM-as-judge evaluation → final response) retries once with an improved query and more context when an answer is not grounded, cites document, page, chunk and match score, and says "I don\'t know" instead of guessing. Includes an offline evaluation suite (retrieval hit rate, groundedness), a FastAPI backend, a React dashboard, and Google Gemini or OpenAI as the LLM.',k:'dataops data ops assistant dbt snowflake sql pipeline runbook chromadb chroma fastapi react gemini openai langgraph rag citations groundedness retry hallucination evaluation personal project github docs documentation'},
+ {id:'X3',src:'Data Engineering Copilot',t:'AI-Powered Data Engineering Copilot (personal, open source, live demo): an agentic GenAI assistant for data engineers. A LangGraph router sends each question to one of five specialist agents: SQL (plain English to Snowflake SQL from schema metadata), Docs RAG (answers only from approved runbooks with file and section citations, and refuses to guess), dbt (materialization, lineage and tests from manifest.json), Data quality (read-only null and duplicate checks) and Pipeline (Airflow log triage: DAG, task, evidence and likely cause). Every SQL statement passes a sqlglot guard (single read-only statement, known tables, schema allowlist, enforced row limit) and runs only when the user presses Run; Airflow retries need human approval. Built with Angular 19 (signals, agent trace, guardrail checklist, charts, themes), FastAPI, LangGraph, OpenAI, Snowflake, dbt, Docker and GitHub Actions, with 33 pytest and 8 Angular tests. The live demo runs in the browser on synthetic data: sureshnarayananankumar.github.io/ai-powered-data-engineering-copilot',k:'data engineering copilot agentic agent agents langgraph router sql snowflake sqlglot guard guardrails dbt lineage data quality airflow pipeline incident rag angular fastapi openai live demo human approval personal project github new latest'},
  {id:'X1',src:'Side builds',t:'Personal projects: HR ATS (React, NestJS, Prisma, MySQL, Redis; 12-stage hiring pipeline, 70 permissions, MFA) and AssessHub (Java 21, Spring Boot, React 18; timed assessments with auto-grading, 55 JUnit + 19 Vitest tests).',k:'personal side project projects github hr ats assesshub nestjs prisma open source'}
 ];
 const SYN={exp:'experience',yrs:'years',yoe:'experience years',genai:'llm rag agent',ai:'llm agent rag',llms:'llm',agents:'agent',search:'search retrieval',vector:'vector embeddings',db:'database mysql mongodb',frontend:'frontend angular react ui',backend:'backend api node',test:'testing',tests:'testing',salary:'salary',ctc:'salary',notice:'notice immediate',why:'summary',hire:'summary contact',strength:'summary',strengths:'summary',fine:'lora finetune',tuning:'finetune',cloud:'aws cloud',projects:'project',biggest:'challenge',difficult:'challenge',js:'javascript angular react node'};
@@ -1058,7 +1079,7 @@ function retrieve(q,k=3){const qt=[...new Set(tok(q))];
 /* ---------- copilot ---------- */
 const STEPS=[['Understand','parse & expand query'],['Retrieve','keyword + synonym search'],['Rerank','IDF scoring, top-3'],['Generate','grounded answer'],['Guardrail','cite sources only']];
 $('#steps').innerHTML=STEPS.map((s,i)=>`<div class="step" id="st${i}"><i>${i+1}</i><span>${s[0]}</span><small>${s[1]}</small></div>`).join('');
-const STARTERS=['Give me a 30-second intro','How many years of experience?','What did you build with LangGraph?','Explain your RAG pipeline','How do you evaluate LLMs?','Biggest AI challenge you solved?','Tell me about DataOps AI Assistant','Notice period & location?'];
+const STARTERS=['Give me a 30-second intro','How many years of experience?','What did you build with LangGraph?','Explain your RAG pipeline','How do you evaluate LLMs?','Biggest AI challenge you solved?','Tell me about DataOps AI Assistant','Tell me about the Data Engineering Copilot','Notice period & location?'];
 $('#starters').innerHTML=STARTERS.map(s=>`<button>${s}</button>`).join('');
 $$('#starters button').forEach(b=>b.onclick=()=>ask(b.textContent));
 const msgs=$('#msgs');
@@ -1100,6 +1121,7 @@ async function ask(q){q=q.trim();if(!q||busy)return;busy=true;addMsg('u',esc(q))
   th.querySelectorAll('.fups button').forEach(b=>b.onclick=()=>ask(b.textContent));
   msgs.scrollTop=msgs.scrollHeight;setTimeout(()=>$$('.step').forEach(s=>s.classList.remove('run','done')),2500);busy=false}
 $('#askDataOps').onclick=()=>{toChat(()=>ask('Tell me about DataOps AI Assistant'))};
+$('#askDECopilot').onclick=()=>{toChat(()=>ask('Tell me about the Data Engineering Copilot'))};
 $('#chatForm').onsubmit=e=>{e.preventDefault();const v=$('#chatInput').value;$('#chatInput').value='';ask(v)};
 
 /* ---------- impact bars ---------- */
