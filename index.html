@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suresh Kumar N · Generative AI Engineer</title>
-<meta name="description" content="Suresh Kumar N: Generative AI & Full Stack Engineer with 3.5 years building production LangGraph agents, RAG pipelines and LLM evaluation for Government of Oman platforms. Immediate joiner.">
-<meta property="og:title" content="Suresh Kumar N · Generative AI & Full Stack Engineer">
+<title>Suresh Kumar N · Generative AI Engineer · AI Angular &amp; React Developer</title>
+<meta name="description" content="Suresh Kumar N: Generative AI Engineer and AI Angular & React developer with 3.5 years building production LangGraph agents, RAG pipelines, LLM evaluation and AI-first Angular/React interfaces for Government of Oman platforms. Immediate joiner.">
+<meta property="og:title" content="Suresh Kumar N · Generative AI Engineer · AI Angular & React Developer">
 <meta property="og:description" content="LangGraph agents · RAG · LLM Evaluation · Node.js · Angular · React. 67% faster contract review, 50% faster search, 40% less manual review.">
 <meta property="og:image" content="https://sureshnarayananankumar.github.io/suresh-portfolio/photo.jpg">
 <meta name="twitter:card" content="summary">
@@ -552,6 +552,47 @@ input[type=range]{width:100%;accent-color:var(--acc);margin-top:6px}
 .stk-tip.on{opacity:1}
 @media(max-width:520px){.stack-rows>div{grid-template-columns:1fr;gap:6px}}
 @media(prefers-reduced-motion:reduce){.stk-chip,.stk-chip.out{animation:none}.stk-tabs.auto button .bar{animation:none}}
+
+/* ---- front-end AI section ---- */
+.fe-sub{max-width:430px;color:var(--muted);font-size:15px;line-height:1.55;margin:0}
+.fe-sub b{color:var(--text)}
+.fe-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px}
+@media(max-width:900px){.fe-grid{grid-template-columns:1fr}}
+.fe-code{padding:0;display:flex;flex-direction:column}
+.fe-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.fe-file{font:500 11px var(--mono);color:var(--muted)}
+.fe-sw{position:relative;display:inline-flex;padding:3px;border:1px solid var(--line2);border-radius:10px;background:var(--panel2)}
+.fe-sw button{position:relative;z-index:1;font:600 12px var(--mono);color:var(--muted);background:none;border:0;padding:6px 14px;border-radius:7px;cursor:pointer;transition:color .25s}
+.fe-sw button[aria-selected=true]{color:#0b0b0c}
+.fe-pill{position:absolute;top:3px;bottom:3px;left:3px;border-radius:7px;background:var(--fec,#dd0031);box-shadow:0 0 18px -3px var(--fec,#dd0031);transition:transform .45s cubic-bezier(.3,1.4,.4,1),width .45s cubic-bezier(.3,1.4,.4,1),background .3s}
+.fe-pre{margin:0;padding:14px 16px;font:12px/1.65 var(--mono);color:var(--text);overflow:auto;height:268px;white-space:pre;tab-size:2}
+.fe-pre .k{color:#ff7a59}.fe-pre .s{color:#3ddc84}.fe-pre .f{color:#5ed4ff}.fe-pre .c{color:var(--muted);font-style:italic}.fe-pre .a{color:#a395ff}
+.fe-pre .cur,.fe-prev .cur{display:inline-block;width:7px;height:14px;background:var(--acc);vertical-align:-2px;animation:feblink .8s steps(1) infinite}
+@keyframes feblink{50%{opacity:0}}
+.fe-prev{border-top:1px solid var(--line);padding:12px 16px 14px;background:color-mix(in srgb,var(--acc) 4%,transparent)}
+.fe-prev-h{font:500 10.5px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;display:flex;align-items:center;gap:7px}
+.fe-prev-h .dot{width:7px;height:7px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 #3ddc84;animation:fepulse 1.6s infinite}
+@keyframes fepulse{70%{box-shadow:0 0 0 6px transparent}}
+.fe-prev p{margin:8px 0 8px;font-size:14px;line-height:1.5;min-height:42px}
+.fe-prev sup{font:600 10px var(--mono);color:#0b0b0c;background:var(--acc);border-radius:4px;padding:0 4px;margin-left:2px}
+.fe-cites{display:flex;gap:6px;flex-wrap:wrap;min-height:24px}
+.fe-cites span{font:500 11px var(--mono);padding:3px 8px;border-radius:6px;border:1px solid var(--line2);background:var(--panel2);animation:fein .35s cubic-bezier(.2,.9,.3,1.3) both}
+@keyframes fein{from{opacity:0;transform:translateY(6px) scale(.9)}}
+.fe-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+@media(max-width:520px){.fe-cards{grid-template-columns:1fr}}
+.fe-card{text-align:left;padding:14px;display:flex;flex-direction:column;gap:6px;cursor:pointer;color:var(--text);font:inherit;transition:transform .2s,border-color .2s,box-shadow .2s}
+.fe-card:hover,.fe-card:focus-visible{transform:translateY(-3px);border-color:color-mix(in srgb,var(--acc) 55%,transparent);box-shadow:0 14px 30px -18px var(--acc);outline:none}
+.fe-card::after{content:'ask my AI →';position:absolute;right:12px;top:12px;font:500 10px var(--mono);color:var(--acc);opacity:0;transform:translateX(-4px);transition:.2s}
+.fe-card:hover::after{opacity:1;transform:none}
+.fe-k{font:500 10.5px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.fe-card b{font-size:15px;line-height:1.25}
+.fe-m{font-size:12.5px;color:var(--muted);line-height:1.45}
+.fe-m i{font-style:normal;color:var(--acc);font-weight:700}
+.fe-links{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){.fe-pre .cur,.fe-prev .cur,.fe-prev-h .dot{animation:none}}
+@media(min-width:1121px){.nlinks a{padding:7px 8px;font-size:13.5px}}
+@media(min-width:1121px) and (max-width:1240px){.nlinks a{padding:7px 5px;font-size:12.5px}}
+@media(min-width:1441px){.nlinks a{padding:7px 6px;font-size:13px}}
 </style>
 </head>
 <body>
@@ -560,7 +601,7 @@ input[type=range]{width:100%;accent-color:var(--acc);margin-top:6px}
 <nav>
   <a href="#hero" class="brand"><svg class="logo" viewBox="0 0 34 34" aria-hidden="true"><rect class="lg-bg" width="34" height="34" rx="10"/><text class="lg-t" x="7" y="22.5">SK</text><circle class="lg-n" cx="27" cy="8" r="2.4"/></svg>Suresh Kumar N</a>
   <div class="nlinks" id="nlinks">
-    <a href="#snapshot">Snapshot</a><a href="#lab">GenAI Lab</a><a href="#work" data-deep>Work</a><a href="#builds" data-deep>Projects</a><a href="#experience">Experience</a><a href="#copilot">Ask AI</a><a href="#match">JD Match</a><a href="#contact">Contact</a>
+    <a href="#snapshot">Snapshot</a><a href="#lab">GenAI Lab</a><a href="#work" data-deep>Work</a><a href="#builds" data-deep>Projects</a><a href="#frontend">Front-end AI</a><a href="#experience">Experience</a><a href="#copilot">Ask AI</a><a href="#match">JD Match</a><a href="#contact">Contact</a>
   </div>
   <div class="nr">
     <button class="kbd" id="palBtn" aria-label="Open command menu"><span>Quick actions</span><kbd>Ctrl K</kbd></button>
@@ -576,7 +617,7 @@ input[type=range]{width:100%;accent-color:var(--acc);margin-top:6px}
     <div>
       <span class="eyebrow"><span class="live"></span><span class="rot" id="roleRot">Generative AI Engineer</span> · Immediate joiner · Chennai</span>
       <h1 id="h1"></h1>
-      <p class="lead">I'm <b>Suresh</b>, a Generative AI &amp; Full Stack Engineer with <b>3.5 years</b> building LangGraph agents, RAG pipelines and LLM evaluation for <b>Government of Oman</b> platforms that serve <b>18,900+ suppliers in 117 countries</b>.</p>
+      <p class="lead">I'm <b>Suresh</b>, a Generative AI Engineer and <b>AI Angular &amp; React developer</b> with <b>3.5 years</b> building LangGraph agents, RAG pipelines, LLM evaluation and the interfaces that put them in front of users, for <b>Government of Oman</b> platforms that serve <b>18,900+ suppliers in 117 countries</b>.</p>
       <div class="cta">
         <button class="btn pri" data-go="copilot">Ask my AI copilot <span class="arrow">→</span></button>
         <button class="btn" data-go="lab">Try the GenAI Lab</button>
@@ -956,6 +997,35 @@ input[type=range]{width:100%;accent-color:var(--acc);margin-top:6px}
 </section>
 
 <!-- CREDENTIALS -->
+<!-- FRONT-END AI -->
+<section id="frontend">
+  <div class="wrap">
+    <div class="sh"><div><div class="idx">10 · front-end AI</div><h2 class="t">AI that users <span class="it">can trust.</span></h2></div>
+      <p class="fe-sub">I build the <b>Angular</b> and <b>React</b> interfaces that put LLMs in front of real users: streaming answers, citations, agent traces and human-approval flows.</p></div>
+    <div class="fe-grid">
+      <div class="panel glow fe-code rv">
+        <div class="fe-bar">
+          <div class="fe-sw" role="tablist" aria-label="Framework"><span class="fe-pill" aria-hidden="true"></span><button role="tab" aria-selected="true" data-fw="ng">Angular</button><button role="tab" aria-selected="false" data-fw="react">React</button></div>
+          <span class="fe-file" id="feFile">ai-answer.component.ts</span>
+        </div>
+        <pre class="fe-pre" aria-label="Code sample"><code id="feCode"></code></pre>
+        <div class="fe-prev" aria-live="polite">
+          <div class="fe-prev-h"><span class="dot"></span>live preview · same pattern, streamed</div>
+          <p id="fePrev"></p>
+          <div class="fe-cites" id="feCites"></div>
+        </div>
+      </div>
+      <div class="fe-cards">
+        <button class="panel fe-card rv" data-q="Tell me about the Angular 22 migration"><span class="fe-k">RABT · Angular 22</span><b>Next.js → Angular 22 SSR in 1 week</b><span class="fe-m"><i>12</i> routes · <i>47</i> standalone components · Lighthouse <i>65 → 90+</i></span></button>
+        <button class="panel fe-card rv d1" data-q="Tell me about the Data Engineering Copilot"><span class="fe-k">Angular 19 · Signals</span><b>Agentic UI with guardrails</b><span class="fe-m">Live agent trace · SQL guard checklist · approval locks · charts</span></button>
+        <button class="panel fe-card rv d2" data-q="Tell me about DataOps AI Assistant"><span class="fe-k">React · Vite</span><b>RAG dashboard with citations</b><span class="fe-m">Document scoping · source cards · groundedness badges</span></button>
+        <button class="panel fe-card rv d3" data-q="Tell me about your frontend work"><span class="fe-k">JSRS · Angular + React</span><b>Enterprise front ends, bilingual</b><span class="fe-m">Route guards · HTTP interceptors · Arabic RTL · Redux · <i>75%</i> test coverage</span></button>
+        <div class="fe-links"><a class="btn sm pri" href="https://sureshnarayananankumar.github.io/ai-powered-data-engineering-copilot/" target="_blank" rel="noopener">▶ Angular live demo ↗</a><a class="btn sm" href="https://sureshnarayananankumar.github.io/dataops-ai-assistant/" target="_blank" rel="noopener">▶ React live demo ↗</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="creds" data-deep style="padding-top:60px">
   <div class="wrap">
     <div class="creds">
@@ -1020,7 +1090,7 @@ const h1=['I','turn','LLMs','into','<span class="it">production</span>','<span c
 $('#h1').innerHTML=h1.map((w,i)=>`<span class="w" style="animation-delay:${.08*i}s">${w}</span>`).join(' ');
 
 /* ---------- marquee ---------- */
-const mq=['LangGraph agents','RAG pipelines','Hybrid search','Rerankers','RAGAS','LLM-as-judge','LangSmith','LoRA fine-tuning','vLLM','AWS Bedrock','GraphQL','Angular 22 SSR','React','Spring Boot'];
+const mq=['LangGraph agents','RAG pipelines','Hybrid search','Rerankers','RAGAS','LLM-as-judge','LangSmith','LoRA fine-tuning','vLLM','AWS Bedrock','GraphQL','Angular 22 SSR','Angular Signals','React','AI chat UIs','Spring Boot'];
 $('#mqT').innerHTML=[...mq,...mq].map(t=>`<span>${t}</span>`).join('');
 
 /* ---------- spotlight, progress, active nav ---------- */
@@ -1093,6 +1163,7 @@ const KB=[
  {id:'P6',src:'Profile · challenges',t:'Key AI challenges I solved: hallucinations (guardrails + RAGAS/LLM-as-judge evaluation), weak retrieval on exact terms (hybrid search + reranker + better chunking), LLM cost (context trimming, prompt compaction), model choice (open-source vs Bedrock per task on accuracy, latency, cost) and debugging multi-step agents (LangSmith/Langfuse tracing).',k:'challenge challenges problem problems difficult hard faced issues solved learn lessons hallucination debugging'},
  {id:'N1',src:'NSS · platform',t:'NSS (National Subsidy System) for the Government of Oman: subsidy application modules in React.js with reusable components and Redux, Node.js/Express microservices on MongoDB, JWT security, LLM API integration and Chart.js/ApexCharts dashboards.',k:'nss subsidy national react redux mongodb mongoose node express microservices charts dashboard'},
  {id:'X2',src:'DataOps AI Assistant',t:'DataOps AI Assistant (personal, open source): upload dbt, Snowflake, SQL and pipeline-runbook docs (PDF, TXT, Markdown, SQL) and ask questions. Ingestion: text extraction → chunking → embeddings → ChromaDB. A LangGraph agent (query understanding → retrieval → generation → LLM-as-judge evaluation → final response) retries once with an improved query and more context when an answer is not grounded, cites document, page, chunk and match score, and says "I don\'t know" instead of guessing. Includes an offline evaluation suite (retrieval hit rate, groundedness), a FastAPI backend, a React dashboard, and Google Gemini or OpenAI as the LLM. A live demo runs in the browser with the sample documents preloaded: sureshnarayananankumar.github.io/dataops-ai-assistant',k:'dataops data ops assistant dbt snowflake sql pipeline runbook chromadb chroma fastapi react gemini openai langgraph rag citations groundedness retry hallucination evaluation personal project github docs documentation'},
+ {id:'F1',src:'Front-end AI',t:'Suresh is a Generative AI Engineer and AI Angular and React developer: he builds the interfaces that put LLMs in front of users, including streaming answers, citations, agent traces, guardrail checklists and human-approval flows. Angular (v9 to v22, Signals, SSR, RxJS, standalone components, route guards, HTTP interceptors): led the RABT Next.js to Angular 22 SSR migration in 1 week (12 routes, 47 standalone components, Lighthouse 65 to 90+), built JSRS Angular modules with English and Arabic RTL layouts, and built the Angular 19 UI of the AI-Powered Data Engineering Copilot. React (Redux, hooks, Vite): JSRS supplier dashboards and the React dashboard of the DataOps AI Assistant. Testing with Vitest, Jasmine, Karma and AI-assisted Playwright E2E.',k:'angular react frontend front-end front end ui ux developer ai developer signals ssr rxjs redux vite hooks typescript components streaming chat interface citations interceptor guard rtl web'},
  {id:'X3',src:'Data Engineering Copilot',t:'AI-Powered Data Engineering Copilot (personal, open source, live demo): an agentic GenAI assistant for data engineers. A LangGraph router sends each question to one of five specialist agents: SQL (plain English to Snowflake SQL from schema metadata), Docs RAG (answers only from approved runbooks with file and section citations, and refuses to guess), dbt (materialization, lineage and tests from manifest.json), Data quality (read-only null and duplicate checks) and Pipeline (Airflow log triage: DAG, task, evidence and likely cause). Every SQL statement passes a sqlglot guard (single read-only statement, known tables, schema allowlist, enforced row limit) and runs only when the user presses Run; Airflow retries need human approval. Built with Angular 19 (signals, agent trace, guardrail checklist, charts, themes), FastAPI, LangGraph, OpenAI, Snowflake, dbt, Docker and GitHub Actions, with 33 pytest and 8 Angular tests. The live demo runs in the browser on synthetic data: sureshnarayananankumar.github.io/ai-powered-data-engineering-copilot',k:'data engineering copilot agentic agent agents langgraph router sql snowflake sqlglot guard guardrails dbt lineage data quality airflow pipeline incident rag angular fastapi openai live demo human approval personal project github new latest ai powered ai-powered engineer engineering de copilot project agentic genai'},
  {id:'X1',src:'Side builds',t:'Personal projects: AI-Powered Data Engineering Copilot (Angular 19, FastAPI, LangGraph; five specialist agents with SQL guardrails and a live demo), DataOps AI Assistant (agentic RAG with LLM-as-judge and a live demo), HR ATS (React, NestJS, Prisma, MySQL, Redis; 12-stage hiring pipeline, 70 permissions, MFA) and AssessHub (Java 21, Spring Boot, React 18; timed assessments with auto-grading, 55 JUnit + 19 Vitest tests).',k:'personal side project projects github hr ats assesshub nestjs prisma open source angular copilot dataops live demo'}
 ];
@@ -1107,7 +1178,7 @@ function retrieve(q,k=3){const qt=[...new Set(tok(q))];
 /* ---------- copilot ---------- */
 const STEPS=[['Understand','parse & expand query'],['Retrieve','keyword + synonym search'],['Rerank','IDF scoring, top-3'],['Generate','grounded answer'],['Guardrail','cite sources only']];
 $('#steps').innerHTML=STEPS.map((s,i)=>`<div class="step" id="st${i}"><i>${i+1}</i><span>${s[0]}</span><small>${s[1]}</small></div>`).join('');
-const STARTERS=['Give me a 30-second intro','How many years of experience?','What did you build with LangGraph?','Explain your RAG pipeline','How do you evaluate LLMs?','Biggest AI challenge you solved?','Tell me about DataOps AI Assistant','Tell me about the Data Engineering Copilot','Notice period & location?'];
+const STARTERS=['Give me a 30-second intro','How many years of experience?','What did you build with LangGraph?','Explain your RAG pipeline','How do you evaluate LLMs?','Biggest AI challenge you solved?','Tell me about DataOps AI Assistant','Tell me about the Data Engineering Copilot','Are you an Angular or React developer?','Notice period & location?'];
 $('#starters').innerHTML=STARTERS.map(s=>`<button>${s}</button>`).join('');
 $$('#starters button').forEach(b=>b.onclick=()=>ask(b.textContent));
 const msgs=$('#msgs');
@@ -1429,7 +1500,7 @@ $('#gRun').onclick=runGuard;$('#gReset').onclick=gReset;$('#gCtx').value=GCTX;$(
 })();
 
 /* ========== role rotator (scramble) ========== */
-(()=>{const el=$('#roleRot');if(!el)return;const R=['Generative AI Engineer','LLM Application Engineer','Agentic AI Engineer','RAG & Evaluation Engineer','AI Full Stack Engineer'];let i=0;const CH='!<>-_\\/[]{}=+*^?#01';
+(()=>{const el=$('#roleRot');if(!el)return;const R=['Generative AI Engineer','AI Angular Developer','AI React Developer','Agentic AI Engineer','RAG & Evaluation Engineer','AI Full Stack Engineer'];let i=0;const CH='!<>-_\\/[]{}=+*^?#01';
  const scr=to=>{const from=el.textContent,len=Math.max(from.length,to.length);let f=0;const q=[...Array(len)].map((_,k)=>({a:from[k]||'',b:to[k]||'',s:Math.floor(Math.random()*12),e:Math.floor(Math.random()*12)+12}));
   (function u(){let o='',done=0;q.forEach(x=>{if(f>=x.e){o+=x.b;done++}else if(f>=x.s){o+=CH[Math.floor(Math.random()*CH.length)]}else o+=x.a});el.textContent=o;f++;if(done<q.length)requestAnimationFrame(u)})()};
  if(!RM)setInterval(()=>{i=(i+1)%R.length;scr(R[i])},2800)})();
@@ -1522,6 +1593,46 @@ observe();
  const io=new IntersectionObserver(([en])=>{if(!en.isIntersecting){clearTimeout(timer);return}if(cur<0)show(0);else if(auto)restart()},{threshold:.3});io.observe(box);
  if(cur<0)show(0);
 }catch(err){console.warn('stack widget',err)}})();
+
+/* ---- front-end AI: framework switch, typed code, streamed preview ---- */
+(()=>{try{
+ const sec=document.getElementById('frontend');if(!sec)return;
+ const codeEl=sec.querySelector('#feCode'),fileEl=sec.querySelector('#feFile'),prev=sec.querySelector('#fePrev'),cites=sec.querySelector('#feCites'),pill=sec.querySelector('.fe-pill'),btns=[...sec.querySelectorAll('.fe-sw button')];
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const CODE={
+  ng:{file:'ai-answer.component.ts',c:'#dd0031',src:
+"// Angular 19 · Signals: stream an LLM answer token by token\n@Component({\n  selector: 'ai-answer',\n  template: `<p>{{ text() }}<i class=\"caret\"></i></p>\n    @for (s of sources(); track s.ref) {\n      <cite>[{{ s.ref }}] {{ s.doc }}</cite>\n    }`,\n})\nexport class AiAnswer {\n  text = signal('');\n  sources = signal<Source[]>([]);\n\n  async ask(q: string) {\n    const res = await fetch('/api/chat/stream', {\n      method: 'POST', body: JSON.stringify({ q }),\n    });\n    const reader = res.body!\n      .pipeThrough(new TextDecoderStream()).getReader();\n    for (;;) {\n      const { value, done } = await reader.read();\n      if (done) break;\n      this.text.update(t => t + value);\n    }\n  }\n}"},
+  react:{file:'AiAnswer.tsx',c:'#5ed4ff',src:
+"// React 18 · hooks: the same streamed answer, cancellable\nexport function AiAnswer({ q }: { q: string }) {\n  const [text, setText] = useState('');\n\n  useEffect(() => {\n    const ctrl = new AbortController();\n    (async () => {\n      const res = await fetch('/api/chat/stream', {\n        method: 'POST', body: JSON.stringify({ q }),\n        signal: ctrl.signal,\n      });\n      const reader = res.body!\n        .pipeThrough(new TextDecoderStream()).getReader();\n      for (;;) {\n        const { value, done } = await reader.read();\n        if (done) break;\n        setText(t => t + value);\n      }\n    })();\n    return () => ctrl.abort();\n  }, [q]);\n\n  return <p>{text}<i className=\"caret\" /></p>;\n}"}};
+ const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+ const KW=/\b(const|let|async|await|for|if|break|return|new|export|class|function|import|from)\b/g;
+ const hl=src=>esc(src).split('\n').map(l=>{if(/^\s*\/\//.test(l))return '<span class="c">'+l+'</span>';
+   return l.replace(/('[^']*'|"[^"]*")/g,'\u0001$1\u0002').replace(KW,'<span class="k">$1</span>').replace(/\b(signal|useState|useEffect|fetch|update|read|getReader|pipeThrough|abort|setText|ask)\b/g,'<span class="f">$1</span>').replace(/(@Component|@for)/g,'<span class="a">$1</span>').replace(/\u0001([^\u0002]*)\u0002/g,'<span class="s">$1</span>')}).join('\n');
+ let typing=0,fw='ng';
+ function type(key){const {src}=CODE[key];const full=hl(src);clearInterval(typing);
+  if(reduce){codeEl.innerHTML=full;return}
+  const lines=src.split('\n');let n=0;
+  typing=setInterval(()=>{n+=1;codeEl.innerHTML=hl(lines.slice(0,n).join('\n'))+'<span class="cur"></span>';if(n>=lines.length){clearInterval(typing);codeEl.innerHTML=full+'<span class="cur"></span>'}},55)}
+ const PRE=[
+  {t:'RABT search time dropped 50% after adding hybrid search (vector + keyword) and a reranker',ref:1,doc:'RABT case study'},
+  {t:', and LangGraph agents cut manual review effort by 40%',ref:2,doc:'RABT agents'},
+  {t:', with every answer scored by RAGAS and an LLM-as-judge.',ref:3,doc:'Eval pipeline'}];
+ let streamT=0;
+ function stream(){clearTimeout(streamT);prev.innerHTML='';cites.innerHTML='';let p=0,i=0,html='';
+  const step=()=>{const part=PRE[p];if(!part){streamT=setTimeout(stream,5200);return}
+   const words=part.t.split(/(\s+)/);
+   if(i<words.length){html+=esc(words[i]);i++;prev.innerHTML=html+'<span class="cur"></span>';streamT=setTimeout(step,reduce?0:45)}
+   else{html+='<sup>'+part.ref+'</sup>';prev.innerHTML=html;const c=document.createElement('span');c.textContent='['+part.ref+'] '+part.doc;cites.append(c);p++;i=0;streamT=setTimeout(step,reduce?0:260)}};
+  step()}
+ function pick(key,user){fw=key;const b=btns.find(x=>x.dataset.fw===key);btns.forEach(x=>x.setAttribute('aria-selected',x===b));
+  pill.style.width=b.offsetWidth+'px';pill.style.transform='translateX('+(b.offsetLeft-3)+'px)';pill.style.setProperty('--fec',CODE[key].c);
+  fileEl.textContent=CODE[key].file;type(key);if(user)stream()}
+ btns.forEach(b=>b.addEventListener('click',()=>pick(b.dataset.fw,true)));
+ sec.querySelector('.fe-sw').addEventListener('keydown',e=>{if(/Arrow(Left|Right)/.test(e.key)){e.preventDefault();const k=fw==='ng'?'react':'ng';pick(k,true);btns.find(x=>x.dataset.fw===k).focus()}});
+ sec.querySelectorAll('.fe-card').forEach(c=>c.addEventListener('click',()=>{if(typeof toChat==='function'&&typeof ask==='function')toChat(()=>ask(c.dataset.q))}));
+ let started=false;new IntersectionObserver(([en])=>{if(en.isIntersecting&&!started){started=true;pick('ng');stream()}},{threshold:.25}).observe(sec);
+ new ResizeObserver(()=>{const b=btns.find(x=>x.dataset.fw===fw);if(b){pill.style.width=b.offsetWidth+'px';pill.style.transform='translateX('+(b.offsetLeft-3)+'px)'}}).observe(sec.querySelector('.fe-sw'));
+}catch(err){console.warn('frontend section',err)}})();
 </script>
 </body>
 </html>
