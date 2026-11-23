@@ -524,6 +524,34 @@ input[type=range]{width:100%;accent-color:var(--acc);margin-top:6px}
 .teaser .tx{margin-left:auto;color:var(--muted);font-size:12px;padding-left:6px}
 @media(max-width:560px){.dock{right:8px;left:8px;width:auto;bottom:76px;height:calc(100vh - 150px)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero h1 .w{opacity:1;transform:none}}
+
+/* ---- core stack: compact interactive console ---- */
+.stack-rows>div{display:grid;grid-template-columns:130px 1fr;gap:12px;align-items:start}
+.stack-rows div.chips{display:flex}
+.stk-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.stk-head small{font:500 11px var(--mono);color:var(--muted)}
+.stk-head small b{color:var(--acc)}
+.stk-tabs{position:relative;display:flex;gap:2px;padding:3px;border:1px solid var(--line2);border-radius:10px;background:var(--panel2);overflow-x:auto;scrollbar-width:none;margin-bottom:10px}
+.stk-tabs::-webkit-scrollbar{display:none}
+.stk-tabs button{position:relative;z-index:1;flex:none;font:500 11.5px var(--mono);color:var(--muted);background:none;border:0;padding:6px 10px;border-radius:7px;cursor:pointer;white-space:nowrap;transition:color .25s}
+.stk-tabs button[aria-selected=true]{color:#0b0b0c}
+.stk-tabs button i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--c);margin-right:6px;vertical-align:1px}
+.stk-tabs button[aria-selected=true] i{background:#0b0b0c}
+.stk-tabs button .bar{position:absolute;left:8px;right:8px;bottom:2px;height:2px;border-radius:2px;background:rgba(0,0,0,.35);transform:scaleX(0);transform-origin:left}
+.stk-tabs.auto button[aria-selected=true] .bar{animation:stkbar var(--dur,3.6s) linear forwards}
+@keyframes stkbar{to{transform:scaleX(1)}}
+.stk-ind{position:absolute;top:3px;bottom:3px;left:0;width:0;border-radius:7px;background:var(--ic,var(--acc));box-shadow:0 0 18px -2px var(--ic,var(--acc));transition:transform .45s cubic-bezier(.3,1.4,.4,1),width .45s cubic-bezier(.3,1.4,.4,1),background .3s}
+.stk-chips{position:relative;display:flex;flex-wrap:wrap;gap:6px;min-height:62px;align-content:flex-start}
+.stk-chip{--p:0;position:relative;font:500 12px var(--mono);padding:5px 10px 5px 9px;border-radius:8px;border:1px solid color-mix(in srgb,var(--c) calc(25% + var(--p)*55%),var(--line2));color:var(--text);background:radial-gradient(120px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--c) calc(var(--p)*28%),transparent),transparent 70%),var(--panel2);cursor:pointer;transform:translateY(calc(var(--p)*-3px)) scale(calc(1 + var(--p)*.06));transition:transform .18s,border-color .2s,box-shadow .2s;box-shadow:0 6px 18px -10px color-mix(in srgb,var(--c) calc(var(--p)*100%),transparent);animation:stkin .45s cubic-bezier(.2,.9,.3,1.3) both;animation-delay:calc(var(--i)*35ms)}
+.stk-chip::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--c);margin-right:7px;vertical-align:2px;box-shadow:0 0 calc(var(--p)*10px) var(--c)}
+.stk-chip:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.stk-chip.out{animation:stkout .22s ease-in forwards;animation-delay:calc(var(--i)*12ms)}
+@keyframes stkin{from{opacity:0;transform:translateY(8px) scale(.85);filter:blur(4px)}}
+@keyframes stkout{to{opacity:0;transform:translateY(-6px) scale(.9);filter:blur(3px)}}
+.stk-tip{position:absolute;pointer-events:none;z-index:3;font:500 10.5px var(--mono);color:#0b0b0c;background:var(--acc);padding:3px 7px;border-radius:6px;white-space:nowrap;opacity:0;transform:translate(-50%,-4px);transition:opacity .15s}
+.stk-tip.on{opacity:1}
+@media(max-width:520px){.stack-rows>div{grid-template-columns:1fr;gap:6px}}
+@media(prefers-reduced-motion:reduce){.stk-chip,.stk-chip.out{animation:none}.stk-tabs.auto button .bar{animation:none}}
 </style>
 </head>
 <body>
@@ -1449,6 +1477,51 @@ setTimeout(()=>{if(!docked&&!teased){teaser.classList.add('show');setTimeout(()=
 
 $$('img[data-me]').forEach(i=>i.src=$('#mePic').src);
 observe();
+
+/* ---- core stack: tabs + scramble + proximity glow (progressive enhancement) ---- */
+(()=>{try{
+ const box=document.querySelector('.b-stack'),src=box&&box.querySelector('.stack-rows');if(!box||!src)return;
+ const COLORS=['#d4ff3a','#a395ff','#5ed4ff','#ff7a59','#3ddc84'];
+ const cats=[...src.children].map((row,i)=>({name:row.querySelector('span').textContent.trim(),c:COLORS[i%COLORS.length],items:[...row.querySelectorAll('.chip')].map(b=>b.textContent.trim())}));
+ const total=cats.reduce((n,c)=>n+c.items.length,0);
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const lbl=box.querySelector('.lbl');
+ const head=document.createElement('div');head.className='stk-head';lbl.replaceWith(head);head.append(lbl);
+ head.insertAdjacentHTML('beforeend','<small><b>'+total+'</b> tools · hover to light up · click to ask my AI</small>');
+ const tabs=document.createElement('div');tabs.className='stk-tabs auto';tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','Stack categories');
+ const all={name:'All',c:'#d4ff3a',items:null};const list=[...cats,all];
+ tabs.innerHTML='<span class="stk-ind" aria-hidden="true"></span>'+list.map((c,i)=>'<button role="tab" aria-selected="false" data-i="'+i+'" style="--c:'+c.c+'"><i></i>'+c.name+'<span class="bar"></span></button>').join('');
+ const chips=document.createElement('div');chips.className='stk-chips';chips.setAttribute('role','tabpanel');chips.setAttribute('aria-live','polite');
+ const tip=document.createElement('span');tip.className='stk-tip';
+ src.hidden=true;src.style.display='none';box.append(tabs,chips);chips.after(tip);box.style.position=box.style.position||'relative';
+ const ind=tabs.querySelector('.stk-ind');const btns=[...tabs.querySelectorAll('button')];
+ const GL='!<>-_/[]{}=+*^?#01ABCDEF';
+ const scramble=(el,text,delay)=>{if(reduce){el.textContent=text;return}let f=0;const tot=10+Math.floor(Math.random()*6);el.textContent=text.replace(/\S/g,()=>GL[Math.random()*GL.length|0]);
+  setTimeout(function tick(){f++;el.textContent=text.split('').map((ch,i)=>ch===' '||i<text.length*f/tot?ch:GL[Math.random()*GL.length|0]).join('');if(f<tot)setTimeout(tick,32)},delay)};
+ let cur=-1,timer=null,auto=true;
+ const items=i=>i===list.length-1?cats.flatMap(c=>c.items.map(t=>[t,c.c,c.name])):list[i].items.map(t=>[t,list[i].c,list[i].name]);
+ function show(i,user){if(i===cur)return;cur=i;
+  btns.forEach((b,j)=>b.setAttribute('aria-selected',j===i));const b=btns[i];
+  ind.style.width=b.offsetWidth+'px';ind.style.transform='translateX('+(b.offsetLeft)+'px)';ind.style.setProperty('--ic',list[i].c);
+  if(user)b.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
+  const old=[...chips.children];old.forEach((o,k)=>{o.style.setProperty('--i',k);o.classList.add('out')});
+  setTimeout(()=>{chips.innerHTML='';items(i).forEach(([t,c,cat],k)=>{const el=document.createElement('button');el.type='button';el.className='stk-chip';el.style.setProperty('--c',c);el.style.setProperty('--i',k);el.dataset.cat=cat;el.dataset.t=t;el.setAttribute('aria-label',t+' ('+cat+'), ask my AI where I used it');chips.append(el);scramble(el,t,k*35)})},old.length&&!reduce?180:0);
+  if(auto)restart()}
+ function restart(){clearTimeout(timer);tabs.classList.remove('auto');void tabs.offsetWidth;if(!auto)return;tabs.classList.add('auto');timer=setTimeout(()=>show((cur+1)%(list.length-1)),3600)}
+ function stop(){auto=false;clearTimeout(timer);tabs.classList.remove('auto')}
+ tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;stop();show(+b.dataset.i,true)});
+ tabs.addEventListener('keydown',e=>{if(!/Arrow(Left|Right)/.test(e.key))return;e.preventDefault();stop();const n=(cur+(e.key==='ArrowRight'?1:-1)+list.length)%list.length;show(n,true);btns[n].focus()});
+ box.addEventListener('pointerenter',()=>{if(auto){clearTimeout(timer);tabs.classList.remove('auto')}});
+ box.addEventListener('pointerleave',()=>{chips.querySelectorAll('.stk-chip').forEach(c=>c.style.setProperty('--p',0));tip.classList.remove('on');if(auto)restart()});
+ let raf=0;chips.addEventListener('pointermove',e=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=0;let near=null,nd=1e9;
+  chips.querySelectorAll('.stk-chip').forEach(c=>{const r=c.getBoundingClientRect();const dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2),d=Math.hypot(dx,dy);
+   c.style.setProperty('--p',Math.max(0,1-d/130).toFixed(3));c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');if(d<nd){nd=d;near=c}});
+  const inside=e.target.closest('.stk-chip');if(inside){const br=box.getBoundingClientRect(),r=inside.getBoundingClientRect();tip.textContent=inside.dataset.cat+' → ask my AI';tip.style.left=(r.left-br.left+r.width/2)+'px';tip.style.top=(r.top-br.top-22)+'px';tip.classList.add('on')}else tip.classList.remove('on')})});
+ chips.addEventListener('click',e=>{const c=e.target.closest('.stk-chip');if(!c)return;stop();const q='Where have you used '+c.dataset.t+'?';if(typeof toChat==='function'&&typeof ask==='function')toChat(()=>ask(q))});
+ new ResizeObserver(()=>{const b=btns[cur];if(b){ind.style.width=b.offsetWidth+'px';ind.style.transform='translateX('+b.offsetLeft+'px)'}}).observe(tabs);
+ const io=new IntersectionObserver(([en])=>{if(!en.isIntersecting){clearTimeout(timer);return}if(cur<0)show(0);else if(auto)restart()},{threshold:.3});io.observe(box);
+ if(cur<0)show(0);
+}catch(err){console.warn('stack widget',err)}})();
 </script>
 </body>
 </html>
