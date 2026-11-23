@@ -1431,7 +1431,7 @@ $('#gRun').onclick=runGuard;$('#gReset').onclick=gReset;$('#gCtx').value=GCTX;$(
    stage.style.transform=`rotateY(${x*12}deg) rotateX(${-y*12}deg)`;$('#mePhoto').style.setProperty('--px',(x+.5)*100+'%');$('#mePhoto').style.setProperty('--py',(y+.5)*100+'%')});
   hero.addEventListener('pointerleave',()=>stage.style.transform='')}
  $('#mePhoto').onclick=()=>{toChat(()=>ask('Give me a 30-second intro'))};
- const G=["Hi, I'm Suresh 👋","வணக்கம், நான் சுரேஷ் 🙏","مرحبا، أنا سوريش 👋","I build AI agents 🤖","Let's build together ✨"];const h=$('#hello');let gi=0;
+ const G=["Hi, I'm Suresh 👋","I build AI agents 🤖","Let's build together ✨"];const h=$('#hello');let gi=0;
  async function typeG(){while(true){const s=G[gi];for(let i=1;i<=s.length;i++){h.textContent=s.slice(0,i);await sleep(55)}await sleep(2200);for(let i=s.length;i>=0;i--){h.textContent=s.slice(0,i)||'\u00a0';await sleep(22)}gi=(gi+1)%G.length}}
  if(!RM)typeG()})();
 
